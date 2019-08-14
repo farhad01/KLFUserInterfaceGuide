@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'KLFUserInterfaceGuide_Example' do
+  pod 'KLFUserInterfaceGuide', :path => '../'
+
+  target 'KLFUserInterfaceGuide_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
