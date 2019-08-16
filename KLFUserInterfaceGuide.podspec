@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'KLFUserInterfaceGuide'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of KLFUserInterfaceGuide.'
+  s.summary          = 'Showcase app tutorial for user onboarding'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -21,15 +21,17 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/jebelli.farhad@gmail.com/KLFUserInterfaceGuide'
+  s.homepage         = 'https://github.com/farhad01/KLFUserInterfaceGuide'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'jebelli.farhad@gmail.com' => 'jebelli.farhad@gmail.com' }
-  s.source           = { :git => 'https://github.com/jebelli.farhad@gmail.com/KLFUserInterfaceGuide.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/farhad01/KLFUserInterfaceGuide.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
+  s.swift_version = '5.0'
+  
   s.source_files = 'KLFUserInterfaceGuide/Classes/**/*'
   
   # s.resource_bundles = {
