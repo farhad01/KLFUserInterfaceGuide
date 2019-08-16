@@ -47,7 +47,7 @@ self.presentUserInterfaceGuide(view: subView, message: "This is very begining me
 decision: { point in
     if self.subView.frame.contains(point) {
         self.subviewTapped()
-            return true
+        return true
     }
     return false
 }, completion: {
