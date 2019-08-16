@@ -33,14 +33,14 @@ Simplest way to use:
 ```swift 5.2
 // view: The view you are going to show guide for
 // message: The message to show also can be `NSAttributedString`
-presentUserInterfaceGuide(view: self.subview, message: "This is very begining message!!!")
+presentUserInterfaceGuide(view: self.subview, message: "This is very beginning message!!!")
 ```
 
-Also provides bunch of presentation options:
+Also provides a bunch of presentation options:
 ```swift
-// tag: will force the guide to show once not providing tag will present the guide everytime
-// dismissWhenTapedOutside: defauld behavier forces user to tap inside the box set this property to true so the guide will dismiss by tapping outside.
-// decision: is '(CGPoint) -> Bool' closure passes the touch point of user in cordinate of view if return true means touch points is where it should be and guide will disiss if false noting happens
+// tag: will force the guide to show once not providing tag will present the guide every time
+// dismissWhenTapedOutside: default behavior forces user to tap inside the box set this property to true so the guide will dismiss by tapping outside.
+// decision: is '(CGPoint) -> Bool' closure passes the touchpoint of user in coordinate of view if return true means touchpoints is where it should be and guide will dismiss if false noting happens
 // completion: will call after the completion of `UIViewController.dismiss()` called 
 
 self.presentUserInterfaceGuide(view: subView, message: "This is very begining message!!!", tag: "view1", dismissWhenTapedOutside: true,
