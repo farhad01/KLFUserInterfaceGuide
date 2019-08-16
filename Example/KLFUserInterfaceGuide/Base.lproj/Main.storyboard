@@ -21,32 +21,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXg-DX-9gp">
-                                <rect key="frame" x="41" y="38" width="186" height="76"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h11-Pu-1xE">
+                                <rect key="frame" x="61" y="269.5" width="253" height="128"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyZ-lT-Wh5">
-                                        <rect key="frame" x="110" y="8" width="68" height="53"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="1" blue="0.30190819501876831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <color key="tintColor" red="0.0" green="1" blue="0.30190819501876831" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAv-jU-F3J">
+                                        <rect key="frame" x="178" y="40" width="48" height="48"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="48" id="6GS-Vf-2dR"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="IUe-1U-GMO"/>
+                                            <constraint firstAttribute="height" constant="48" id="PKR-jt-q8u"/>
+                                        </constraints>
+                                        <color key="tintColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Info">
+                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.92549019610000005" green="0.047058823530000002" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="186" id="TCf-5M-mbz"/>
-                                    <constraint firstAttribute="height" constant="76" id="hPv-Ox-nU5"/>
+                                    <constraint firstAttribute="height" constant="128" id="6hZ-dB-HVP"/>
+                                    <constraint firstItem="JAv-jU-F3J" firstAttribute="centerY" secondItem="h11-Pu-1xE" secondAttribute="centerY" id="G4u-cO-6L1"/>
+                                    <constraint firstAttribute="trailing" secondItem="JAv-jU-F3J" secondAttribute="trailing" constant="27" id="OGC-pm-jLF"/>
+                                    <constraint firstItem="JAv-jU-F3J" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="h11-Pu-1xE" secondAttribute="leading" constant="20" symbolic="YES" id="XHM-bw-IEk"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.92549019610000005" green="0.047058823530000002" blue="0.42745098040000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="bXg-DX-9gp" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="41" id="nig-uH-wWd"/>
-                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="bXg-DX-9gp" secondAttribute="bottom" constant="553" id="txl-X6-cAf"/>
+                            <constraint firstItem="h11-Pu-1xE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="45" id="EMQ-TG-R0e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="h11-Pu-1xE" secondAttribute="trailing" constant="45" id="d2M-fE-Ffq"/>
+                            <constraint firstItem="h11-Pu-1xE" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="mvv-Gz-DUA"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="innerSubview" destination="dyZ-lT-Wh5" id="m3q-db-krX"/>
-                        <outlet property="subView" destination="bXg-DX-9gp" id="0MR-i9-nhd"/>
+                        <outlet property="innerSubview" destination="JAv-jU-F3J" id="egy-Ds-PPA"/>
+                        <outlet property="subView" destination="h11-Pu-1xE" id="fBx-qx-ECY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

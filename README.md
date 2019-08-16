@@ -8,7 +8,9 @@
 
 ## Description
 Lightweight and Easy to use ios library to make the user familiar with your app.
-it requires a view and a text and an optional tag so you will not worry about presentation next time. it will use the tag to set a flag on UserDefault. you can present it multiple time after each other it has queueing mechanism and you will not get UIViewController presentation error.
+it requires a view and a text and an optional tag so you will not worry about presentation next time, it will use the tag to set a flag on UserDefault. you can present it multiple time after each other it has queueing mechanism and you will not get UIViewController presentation error.
+
+<img src="example.gif" width="280">
   
 ## Installation
 
@@ -19,10 +21,64 @@ it, simply add the following line to your Podfile:
 pod 'KLFUserInterfaceGuide'
 ```
 
-## Example
+## Usage
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+```swift
+import KLFUserInterfaceGuide
+```
 
+On your `viewController` call `presentUserInterfaceGuide` function
+
+Simplest way to use:
+```swift 5.2
+// view: The view you are going to show guide for
+// message: The message to show also can be `NSAttributedString`
+presentUserInterfaceGuide(view: self.subview, message: "This is very begining message!!!")
+```
+
+Also provides bunch of presentation options:
+```swift
+// tag: will force the guide to show once not providing tag will present the guide everytime
+// dismissWhenTapedOutside: defauld behavier forces user to tap inside the box set this property to true so the guide will dismiss by tapping outside.
+// decision: is '(CGPoint) -> Bool' closure passes the touch point of user in cordinate of view if return true means touch points is where it should be and guide will disiss if false noting happens
+// completion: will call after the completion of `UIViewController.dismiss()` called 
+
+self.presentUserInterfaceGuide(view: subView, message: "This is very begining message!!!", tag: "view1", dismissWhenTapedOutside: true,
+decision: { point in
+    if self.subView.frame.contains(point) {
+        self.subviewTapped()
+            return true
+    }
+    return false
+}, completion: {
+     subViewTapped()
+})
+
+```
+
+## Configuration
+You can set configuration everywhere but best place is `didFinishLaunchingWithOptions` in `AppDelegate`
+```swift
+func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+    
+    var config = KLFUserInterfaceGuide.config
+
+    //alpa of background of the guide
+    config.alpha = 0.8
+    //color of background of the guide
+    config.background = .blue
+    //margin of the box over the view
+    config.rectMargin = 10
+    //radius  of the box over the view
+    config.rectRadius = 10
+    //font of the message
+    config.font = UIFont.systemFont(ofSize: 14)
+    //alignment of the message
+    config.textAlignment = .natural
+    
+    KLFUserInterfaceGuide.config = config
+}
+```
 
 ## Author
 

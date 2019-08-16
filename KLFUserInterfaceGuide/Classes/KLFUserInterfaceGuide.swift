@@ -82,7 +82,6 @@ public extension UIViewController {
         } else {
             KLFUserInterfaceGuide.queue.append(userGuide)
         }
-
     }
     
     func presentUserInterfaceGuide(view: UIView, message: String, tag: String? = nil, dismissWhenTapedOutside: Bool = false,decision: GuideDecision? = nil, completion: GuideCompletion? = nil) {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import KLFUserInterfaceGuide
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        var config = KLFUserInterfaceGuide.config
+        config.alpha = 0.7
+        config.background = .blue
+        config.font = UIFont.systemFont(ofSize: 14)
+        config.rectMargin = 10
+        config.rectRadius = 10
+        config.textAlignment = .natural
+        
+        KLFUserInterfaceGuide.config = config
+        
+        
         // Override point for customization after application launch.
         return true
     }
