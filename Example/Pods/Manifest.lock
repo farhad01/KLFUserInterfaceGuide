@@ -1,0 +1,16 @@
+PODS:
+  - KLFUserInterfaceGuide (0.1.0)
+
+DEPENDENCIES:
+  - KLFUserInterfaceGuide (from `../`)
+
+EXTERNAL SOURCES:
+  KLFUserInterfaceGuide:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KLFUserInterfaceGuide: 4477ef730ee61bbb70909013ef8394e4bcedd73d
+
+PODFILE CHECKSUM: 8455ef3d015a569304cd5591eaf085a22d6ad13c
+
+COCOAPODS: 1.6.1

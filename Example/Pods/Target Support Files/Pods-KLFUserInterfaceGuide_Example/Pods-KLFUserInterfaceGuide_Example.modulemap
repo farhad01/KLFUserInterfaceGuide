@@ -1,0 +1,6 @@
+framework module Pods_KLFUserInterfaceGuide_Example {
+  umbrella header "Pods-KLFUserInterfaceGuide_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
