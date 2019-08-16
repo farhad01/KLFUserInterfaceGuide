@@ -7,8 +7,8 @@
 
 
 ## Description
-Lightweight and Easy to use ios library to make the user familiar with your app.
-it requires a view and a text and an optional tag so you will not worry about presentation next time, it will use the tag to set a flag on UserDefault. you can present it multiple time after each other it has queueing mechanism and you will not get UIViewController presentation error.
+Lightweight and easy to use iOS library to make the user familiar with your app.
+It requires a view and a text and an optional tag so you won't have to worry about presentation next time, it will use the tag to set a flag on User Defaults. You can present it multiple times after each other, since it has a queueing mechanism and you will not get `UIViewController` presentation error.
 
 <img src="example.gif" width="280">
   
@@ -36,7 +36,7 @@ Simplest way to use:
 presentUserInterfaceGuide(view: self.subview, message: "This is very beginning message!!!")
 ```
 
-Also provides a bunch of presentation options:
+Also provides some presentation options:
 ```swift
 // tag: will force the guide to show once not providing tag will present the guide every time
 // dismissWhenTapedOutside: default behavior forces user to tap inside the box set this property to true so the guide will dismiss by tapping outside.
