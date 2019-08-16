@@ -18,7 +18,8 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+  Lightweight and Easy to use ios library to make the user familiar with your app.
+  it requires a view and a text and an optional tag so you will not worry about presentation next time. it will use the tag to set a flag on UserDefault. you can present it multiple time after each other it has queueing mechanism and you will not get UIViewController presentation error.
                        DESC
 
   s.homepage         = 'https://github.com/farhad01/KLFUserInterfaceGuide'
