@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h11-Pu-1xE">
-                                <rect key="frame" x="61" y="269.5" width="253" height="128"/>
+                                <rect key="frame" x="61" y="112" width="253" height="128"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JAv-jU-F3J">
                                         <rect key="frame" x="178" y="40" width="48" height="48"/>
@@ -51,7 +51,7 @@
                         <constraints>
                             <constraint firstItem="h11-Pu-1xE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="45" id="EMQ-TG-R0e"/>
                             <constraint firstAttribute="trailingMargin" secondItem="h11-Pu-1xE" secondAttribute="trailing" constant="45" id="d2M-fE-Ffq"/>
-                            <constraint firstItem="h11-Pu-1xE" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="mvv-Gz-DUA"/>
+                            <constraint firstItem="h11-Pu-1xE" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" constant="-157" id="mvv-Gz-DUA"/>
                         </constraints>
                     </view>
                     <connections>

@@ -19,11 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         var config = KLFUserInterfaceGuide.config
         config.alpha = 0.7
-        config.background = .blue
+        config.background = .red
         config.font = UIFont.systemFont(ofSize: 14)
         config.rectMargin = 10
         config.rectRadius = 10
         config.textAlignment = .natural
+        config.bubbleBackgroundColor = .gray
+        config.bubbleBorderColor = .yellow
+        config.bubbleTextColor = .cyan
         
         KLFUserInterfaceGuide.config = config
         

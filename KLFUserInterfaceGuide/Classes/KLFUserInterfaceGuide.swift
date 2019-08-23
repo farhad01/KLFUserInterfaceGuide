@@ -13,14 +13,16 @@ public class KLFUserInterfaceGuide {
     public struct Config {
         public var alpha: CGFloat = 0.8
         public var background = UIColor.googleBlue
+        public var bubbleBorderColor = UIColor.googleBlue
+        public var bubbleBackgroundColor = UIColor.white
+        public var bubbleTextColor = UIColor.black
+        
         public var rectMargin: CGFloat = 10
         public var rectRadius: CGFloat = 10
         public var font = UIFont.systemFont(ofSize: 14)
         public var textAlignment: NSTextAlignment = .natural
-        init() {
-            
+        public init() {
         }
-        
     }
     
     public static func guideShouldShow(tag: String) -> Bool {

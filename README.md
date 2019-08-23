@@ -75,6 +75,12 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
     config.font = UIFont.systemFont(ofSize: 14)
     //alignment of the message
     config.textAlignment = .natural
+    // bubble background
+    config.bubbleBackgroundColor = .gray
+    // bubble border
+    config.bubbleBorderColor = .yellow
+    // bubble message text
+    config.bubbleTextColor = .cyan
     
     KLFUserInterfaceGuide.config = config
 }

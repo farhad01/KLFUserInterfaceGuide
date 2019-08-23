@@ -79,6 +79,7 @@ class GuideView: UIView {
         guard self.guideRect != nil, self.config != nil else {
             return
         }
+        messageView.textColor = config.bubbleTextColor
         messageView.font = config.font
         messageView.textAlignment = config.textAlignment
         
@@ -127,12 +128,12 @@ class GuideView: UIView {
         firstDot.append(secoundDot)
         
         innerPathLayer.path = firstDot.cgPath
-        innerPathLayer.strokeColor = UIColor.white.cgColor
+        innerPathLayer.strokeColor = config.bubbleBackgroundColor.cgColor
         innerPathLayer.lineWidth = 2
         innerPathLayer.fillColor = UIColor.clear.cgColor
         
         outerPathLayer.path = firstDot.cgPath
-        outerPathLayer.strokeColor = UIColor.blue.cgColor
+        outerPathLayer.strokeColor = config.bubbleBorderColor.cgColor
         outerPathLayer.lineWidth = 8
         outerPathLayer.fillColor = UIColor.clear.cgColor
         
@@ -151,17 +152,17 @@ class GuideView: UIView {
         let messageFrame = halfRectBezierPath(rect: messageBoundsLayer.bounds, cornrtRadius: 8)
         
         messageBoundsLayer.path = messageFrame.cgPath
-        messageBoundsLayer.strokeColor = UIColor.blue.cgColor
+        messageBoundsLayer.strokeColor = config.bubbleBorderColor.cgColor
         messageBoundsLayer.lineWidth = 4
-        messageBoundsLayer.fillColor = UIColor.white.cgColor
+        messageBoundsLayer.fillColor = config.bubbleBackgroundColor.cgColor
         messageBoundsLayer.strokeStart = 0
         messageBoundsLayer.strokeEnd = 0
         messageBoundsLayer.setAffineTransform(CGAffineTransform(scaleX: 1, y: shouldShowOnTop ? -1 : 1))
         
         mirrorMessageBoundsLayer.path = messageFrame.cgPath
-        mirrorMessageBoundsLayer.strokeColor = UIColor.blue.cgColor
+        mirrorMessageBoundsLayer.strokeColor = config.bubbleBorderColor.cgColor
         mirrorMessageBoundsLayer.lineWidth = 4
-        mirrorMessageBoundsLayer.fillColor = UIColor.white.cgColor
+        mirrorMessageBoundsLayer.fillColor = config.bubbleBackgroundColor.cgColor
         mirrorMessageBoundsLayer.strokeStart = 0
         mirrorMessageBoundsLayer.strokeEnd = 0
         
