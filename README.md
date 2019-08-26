@@ -88,8 +88,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
 
 ## Author
 
-jebelli.farhad@gmail.com, jebelli.farhad@gmail.com
-
+jebelli.farhad@gmail.com
 ## License
 
 KLFUserInterfaceGuide is available under the MIT license. See the LICENSE file for more info.
