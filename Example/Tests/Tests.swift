@@ -1,5 +1,5 @@
 import XCTest
-import KLFUserInterfaceGuide
+//import KLFUserInterfaceGuide
 
 class Tests: XCTestCase {
     

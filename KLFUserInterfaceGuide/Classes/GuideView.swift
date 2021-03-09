@@ -7,9 +7,12 @@
 
 import UIKit
 
-class GuideView: UIView {
+class GuideView: UIView, GuideViewProtocol {
+    var title_: NSAttributedString!
+    
     var guideRect: CGRect!
     var config: KLFUserInterfaceGuide.Config!
+    var shouldShowOnTop = true
     var message: NSAttributedString! {
         didSet {
             messageView.attributedText = message
@@ -21,7 +24,7 @@ class GuideView: UIView {
     let messageBoundsLayer = CAShapeLayer()
     let mirrorMessageBoundsLayer = CAShapeLayer()
     
-    var shouldShowOnTop = true
+    
     
     let messageView = UILabel()
     

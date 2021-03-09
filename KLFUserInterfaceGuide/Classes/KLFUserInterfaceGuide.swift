@@ -21,6 +21,10 @@ public class KLFUserInterfaceGuide {
         public var rectRadius: CGFloat = 10
         public var font = UIFont.systemFont(ofSize: 14)
         public var textAlignment: NSTextAlignment = .natural
+        
+        public var titleFont = UIFont.systemFont(ofSize: 14)
+        public var titleTextColor = UIColor.black
+        
         public init() {
         }
     }
@@ -37,6 +41,7 @@ public class KLFUserInterfaceGuide {
     fileprivate static func presentUserInterfaceGuide(userGuide: UserGuide) {
         let guideViewController = GuideViewController()
         guideViewController.destView = userGuide.view
+        guideViewController.title_ = userGuide.title
         guideViewController.message = userGuide.message
         guideViewController.dismissWhenTappedOutside = userGuide.dismissWhenTapedOutside
         guideViewController.decision = userGuide.decision
@@ -44,6 +49,7 @@ public class KLFUserInterfaceGuide {
         guideViewController.completion = userGuide.completion
         guideViewController.modalPresentationStyle = .overCurrentContext
         guideViewController.modalTransitionStyle = .crossDissolve
+        
         userGuide.controller.present(guideViewController, animated: true, completion: nil)
     }
     
@@ -56,12 +62,12 @@ public class KLFUserInterfaceGuide {
 }
 
 private struct UserGuide {
-    let view: UIView, message: NSAttributedString, tag: String?, dismissWhenTapedOutside: Bool,decision: GuideDecision?, dismissByTapOutsideCompletion: GuideCompletion, completion: GuideCompletion?, controller: UIViewController
+    let view: UIView, title: NSAttributedString?, message: NSAttributedString, tag: String?, dismissWhenTapedOutside: Bool,decision: GuideDecision?, dismissByTapOutsideCompletion: GuideCompletion, completion: GuideCompletion?, controller: UIViewController
 }
 
 public extension UIViewController {
 
-    func presentUserInterfaceGuide(view: UIView, message: NSAttributedString, tag: String? = nil, dismissWhenTapedOutside: Bool = false,decision: GuideDecision? = nil, completion: GuideCompletion? = nil) {
+    func presentUserInterfaceGuide(view: UIView, title: NSAttributedString? = nil, message: NSAttributedString, tag: String? = nil, dismissWhenTapedOutside: Bool = false,decision: GuideDecision? = nil, completion: GuideCompletion? = nil) {
         if let tag = tag {
             if KLFUserInterfaceGuide.guideShouldShow(tag: tag) {
                 UserDefaults.standard.set(true, forKey: KLFUserInterfaceGuide.userGuideTag(tag: tag))
@@ -69,7 +75,7 @@ public extension UIViewController {
                 return
             }
         }
-        let userGuide = UserGuide(view: view, message: message, tag: tag, dismissWhenTapedOutside: dismissWhenTapedOutside, decision: decision, dismissByTapOutsideCompletion: {
+        let userGuide = UserGuide(view: view, title: title, message: message, tag: tag, dismissWhenTapedOutside: dismissWhenTapedOutside, decision: decision, dismissByTapOutsideCompletion: {
             KLFUserInterfaceGuide.queue.removeFirst()
             KLFUserInterfaceGuide.handleNextInQueue()
         }, completion: {
@@ -86,7 +92,7 @@ public extension UIViewController {
         }
     }
     
-    func presentUserInterfaceGuide(view: UIView, message: String, tag: String? = nil, dismissWhenTapedOutside: Bool = false,decision: GuideDecision? = nil, completion: GuideCompletion? = nil) {
-        presentUserInterfaceGuide(view: view, message: NSAttributedString(string: message), tag: tag, dismissWhenTapedOutside: dismissWhenTapedOutside, decision: decision, completion: completion)
+    func presentUserInterfaceGuide(view: UIView, title: String? = nil, message: String, tag: String? = nil, dismissWhenTapedOutside: Bool = false,decision: GuideDecision? = nil, completion: GuideCompletion? = nil) {
+        presentUserInterfaceGuide(view: view, title: title.flatMap({NSAttributedString(string: $0)}), message: NSAttributedString(string: message), tag: tag, dismissWhenTapedOutside: dismissWhenTapedOutside, decision: decision, completion: completion)
     }
 }

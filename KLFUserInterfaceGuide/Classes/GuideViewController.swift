@@ -9,6 +9,8 @@ import UIKit
 
 class GuideViewController: UIViewController {
     var destView: UIView!
+    
+    var title_: NSAttributedString!
     var message: NSAttributedString!
     
     var dismissWhenTappedOutside: Bool = false
@@ -23,11 +25,11 @@ class GuideViewController: UIViewController {
     
     override func loadView() {
         super.loadView()
-        view = GuideView()
+        view = SPGuideView()
     }
     
-    var guideView: GuideView {
-        return view as! GuideView
+    var guideView: GuideViewProtocol {
+        return view as! GuideViewProtocol
     }
     
     override func viewDidLoad() {
@@ -43,6 +45,7 @@ class GuideViewController: UIViewController {
         guideView.shouldShowOnTop = !isLocatedOnTop(rect: destRect)
         guideView.config = KLFUserInterfaceGuide.config
         guideView.message = message
+        guideView.title_ = title_
     }
     
     private func isLocatedOnTop(rect: CGRect) -> Bool {
