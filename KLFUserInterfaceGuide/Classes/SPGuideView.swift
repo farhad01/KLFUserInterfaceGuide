@@ -41,15 +41,18 @@ class SPGuideView: UIView, GuideViewProtocol {
         addSubview(backgroundView)
         topConstraint = backgroundView.topAnchor.constraint(equalTo: topAnchor)
         bottomConstraint = backgroundView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        NSLayoutConstraint.activeAll {
-            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16)
-            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16)
+        NSLayoutConstraint.activate([
+            backgroundView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            backgroundView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
             
-            stack.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor)
-            stack.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor)
-            stack.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 16)
-            stack.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -16)
-        }
+            stack.leadingAnchor.constraint(equalTo: backgroundView.leadingAnchor, constant: 16),
+            // stack.leading = backView.leading * multi + constant
+            stack.trailingAnchor.constraint(equalTo: backgroundView.trailingAnchor, constant: -16),
+            stack.topAnchor.constraint(equalTo: backgroundView.topAnchor, constant: 16),
+            stack.bottomAnchor.constraint(equalTo: backgroundView.bottomAnchor, constant: -16),
+            messageLabel.widthAnchor.constraint(equalTo: stack.widthAnchor)
+        ])
+        messageLabel.numberOfLines = 0
         backgroundView.layer.borderWidth = 1
         backgroundView.layer.cornerRadius = 8
     }
@@ -103,17 +106,17 @@ class SPGuideView: UIView, GuideViewProtocol {
     }
 }
 
-@_functionBuilder
-struct ActivateConstraint {
-    static func buildBlock(_ constraints: NSLayoutConstraint...) -> [NSLayoutConstraint] {
-        constraints
-    }
-}
-
-extension NSLayoutConstraint {
-    
-    static func activeAll(@ActivateConstraint _ constraints: () -> [NSLayoutConstraint]) {
-        NSLayoutConstraint.activate(constraints())
-        
-    }
-}
+//@_functionBuilder
+//struct ActivateConstraint {
+//    static func buildBlock(_ constraints: NSLayoutConstraint...) -> [NSLayoutConstraint] {
+//        constraints
+//    }
+//}
+//
+//extension NSLayoutConstraint {
+//
+//    static func activeAll(@ActivateConstraint _ constraints: () -> [NSLayoutConstraint]) {
+//        NSLayoutConstraint.activate(constraints())
+//
+//    }
+//}
